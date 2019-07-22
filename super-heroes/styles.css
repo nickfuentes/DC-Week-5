@@ -1,0 +1,8 @@
+#movieListDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#movieListDiv div {
+    text-align: center;
+}
