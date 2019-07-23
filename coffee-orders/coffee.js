@@ -7,9 +7,8 @@ let deleteOrderButton = document.getElementById("deleteOrderButton")
 let emailInputTextBox = document.getElementById("emailInputTextBox")
 let orderInputTextBox = document.getElementById("orderInputTextBox")
 let searchEmailInputTextBox = document.getElementById("searchEmailInputTextBox")
-
 let deleteEmailInputTextBox = document.getElementById("deleteEmailInputTextBox")
-let deleteEmailText = deleteEmailInputTextBox.value
+
 
 // Displays all the coffee orders onto the page
 function grabAllCoffeeOrders(getThemOrders) {
@@ -32,7 +31,7 @@ function getThemOrders(orders) {
     displayAllOrders(orders)
 }
 
-// displays all cofffe orders
+// displays all coffe orders
 function displayAllOrders(orders) {
     let allOrders = orders.map(order => {
         return `<div class="orders">
@@ -80,5 +79,18 @@ function getOrderByEmail() {
 
             ordersListDiv.innerHTML = selectedOrder
         })
+
+}
+
+deleteOrderButton.addEventListener("click", deleteOrder)
+
+function deleteOrder() {
+
+    let deleteEmailText = deleteEmailInputTextBox.value
+
+    fetch(`http://dc-coffeerun.herokuapp.com/api/coffeeorders/${deleteEmailText}`, {
+        method: 'DELETE',
+        headers: { "Content-Type": "application/json" }
+    })
 
 }
