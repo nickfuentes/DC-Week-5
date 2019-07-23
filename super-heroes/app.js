@@ -34,6 +34,8 @@ reqBatman.addEventListener("load", () => {
 // make the actual request...
 reqBatman.send()
 
+
+// Function that shows more details on the movie clicked
 function detailedFeature(imdbID) {
 
     // url with api key to get detailed batman movies
