@@ -1,8 +1,10 @@
-let groceryListTextBox = document.getElementById("groceryListTextBox")
+let groceryListNameTextBox = document.getElementById("groceryListNameTextBox")
+let groceryListAddressTextBox = document.getElementById("groceryListAddressTextBox")
+
+let createGroceryListButton = document.getElementById("createGroceryListButton")
 
 let groceryListsDiv = document.getElementById("groceryListsDiv")
 
-let createGroceryListButton = document.getElementById("createGroceryListButton")
 
 let groceriesRef = database.ref("categories")
 
@@ -37,9 +39,9 @@ function displayGrocerysLists(groceryLists) {
     groceryListsDiv.innerHTML = groceryDetails.join('')
 }
 
-addUserButton.addEventListener('click', () => {
+createGroceryListButton.addEventListener('click', () => {
 
-    let name = nameTextBox.value
-    let age = parseInt(ageTextBox.value)
+    let storeName = groceryListNameTextBox.value
+    let storeAddress = groceryListAddressTextBox.value
     saveUser(name, age)
 })
