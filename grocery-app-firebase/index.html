@@ -11,11 +11,45 @@
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
+    <h1>Add Grocery List</h1>
+    <input id="groceryListTextBox" type="text">
+    <button id="createGroceryListButton" type="button">Create</button>
+
+    <div id="groceryListsDiv">
+
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDsDKFbySVAEMlv4m_-Gp4nLW8CsBtdBmk",
+            authDomain: "grocery-app-firebase-a0f1d.firebaseapp.com",
+            databaseURL: "https://grocery-app-firebase-a0f1d.firebaseio.com",
+            projectId: "grocery-app-firebase-a0f1d",
+            storageBucket: "",
+            messagingSenderId: "158036915206",
+            appId: "1:158036915206:web:df934fb68f647c1a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // create an object of firebase database
+        let database = firebase.database()
+    </script>
 
     <script src="js/main.js" async defer></script>
+
 </body>
 
 </html>
