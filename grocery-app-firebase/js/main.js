@@ -29,7 +29,7 @@ function displayGrocerysLists(groceryLists) {
         return `
         <div class="groceryList">
         ${groceryList.storeName} - ${groceryList.storeAddress}
-        <button onclick='deleteUser("${groceryList.key}")'>
+        <button onclick='deleteGroceryList("${groceryList.key}")'>
         Delete
         </button>
         </div>
@@ -39,9 +39,29 @@ function displayGrocerysLists(groceryLists) {
     groceryListsDiv.innerHTML = groceryDetails.join('')
 }
 
+
+// addlistner on create button for store name and store address
 createGroceryListButton.addEventListener('click', () => {
 
     let storeName = groceryListNameTextBox.value
+    console.log(storeName)
     let storeAddress = groceryListAddressTextBox.value
-    saveUser(name, age)
+    console.log(storeAddress)
+    saveGroceryList(storeName, storeAddress)
 })
+
+// saves the groceryList to the database
+function saveGroceryList(storeName, storeAddress) {
+    groceriesRef.push({ // use push to create a random id for the node
+        storeName: storeName,
+        storeAddress: storeAddress
+    })
+
+}
+
+// deletes the grocerylist
+function deleteGroceryList(key) {
+    groceriesRef.child(key).remove()
+}
+
+
