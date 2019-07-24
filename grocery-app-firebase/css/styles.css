@@ -1,3 +1,13 @@
+#headerDiv {
+    text-align: center;
+}
+
+#groceryListsDiv {
+    margin: 40px;
+}
+
 .groceryList {
     text-align: center;
+    background-color: lightblue;
+    margin: 20px 0 20px 0;
 }
