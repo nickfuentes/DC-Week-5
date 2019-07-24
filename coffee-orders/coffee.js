@@ -26,10 +26,12 @@ function grabAllCoffeeOrders(getThemOrders) {
 }
 grabAllCoffeeOrders(getThemOrders)
 
+
 // pulls all orders out from grab CoffeeOrders function
 function getThemOrders(orders) {
     displayAllOrders(orders)
 }
+
 
 // displays all coffe orders
 function displayAllOrders(orders) {
@@ -42,7 +44,9 @@ function displayAllOrders(orders) {
     ordersListDiv.innerHTML = allOrders.join("")
 }
 
+
 newOrderButton.addEventListener("click", postOrder)
+
 
 // post a new order to the api
 function postOrder() {
@@ -59,6 +63,7 @@ function postOrder() {
 
 
 searchOrderButton.addEventListener("click", getOrderByEmail)
+
 
 // gets order by email
 function getOrderByEmail() {
@@ -82,7 +87,9 @@ function getOrderByEmail() {
 
 }
 
+
 deleteOrderButton.addEventListener("click", deleteOrder)
+
 
 function deleteOrder() {
 
