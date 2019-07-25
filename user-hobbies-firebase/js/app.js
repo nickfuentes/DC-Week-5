@@ -34,7 +34,7 @@ function displayAllTheUsers(users) {
         return `<div class="userDiv">
                     <p>Name: ${user.name}</p>
                     <p>Age: ${user.age}</p>
-                    <button> onclick='deleteUser("${user.key}")</button>
+                    <button onclick="deleteUser('${user.key}')">Delete</button>
                 </div>`
     })
     usersDiv.innerHTML = listOfUsers.join("")
@@ -58,4 +58,9 @@ function saveUserToDatabase(userName, userAge) {
         age: userAge
     })
 
+}
+
+// function that deletes the user based of the user key
+function deleteUser(key) {
+    usersRef.child(key).remove()
 }
