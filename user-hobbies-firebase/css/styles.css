@@ -1,0 +1,14 @@
+#headerDiv {
+    text-align: center;
+}
+
+#usersDiv {
+    display: flex;
+}
+
+.userDiv {
+    text-align: center;
+    background-color: lightcoral;
+    margin: 20px;
+    padding: 10px 35px 10px 35px;
+}
