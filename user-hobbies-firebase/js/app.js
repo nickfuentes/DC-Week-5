@@ -5,10 +5,10 @@ let createAgeTextBox = document.getElementById("createAgeTextBox")
 
 let createUserButton = document.getElementById("createUserButton")
 
+let usersRef = database.ref("users")
+
 // gets all the users from the database
 function getTheUsersFromDatabase(callback) {
-
-    let usersRef = database.ref("users")
 
     usersRef.on('value', (snapshot) => {
 
@@ -32,8 +32,9 @@ function displayAllTheUsers(users) {
 
     let listOfUsers = users.map(user => {
         return `<div class="userDiv">
-                    <p>${user.name}</p>
-                    <p>${user.age}</p>
+                    <p>Name: ${user.name}</p>
+                    <p>Age: ${user.age}</p>
+                    <button> onclick='deleteUser("${user.key}")</button>
                 </div>`
     })
     usersDiv.innerHTML = listOfUsers.join("")
@@ -45,8 +46,16 @@ createUserButton.addEventListener("click", function () {
     let userName = createNameTextBox.value
     let userAge = createAgeTextBox.value
 
+    saveUserToDatabase(userName, userAge)
+
 })
 
-function saveUserToDatabase() {
+// saves the user name and user age to the database and creates and unique id
+function saveUserToDatabase(userName, userAge) {
+
+    usersRef.push({
+        name: userName,
+        age: userAge
+    })
 
 }
