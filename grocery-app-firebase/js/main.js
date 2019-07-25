@@ -27,11 +27,21 @@ groceriesRef.on('value', (snapshot) => {
 function displayGrocerysLists(groceryLists) {
     let groceryDetails = groceryLists.map(groceryList => {
         return `
+        <div class="groceryLists">
         <div class="groceryList">
         ${groceryList.storeName} - ${groceryList.storeAddress}
-        <button onclick='deleteGroceryList("${groceryList.key}")'>
-        Delete
-        </button>
+            <button onclick='deleteGroceryList("${groceryList.key}")'>
+            Delete
+            </button>
+            </di>
+            <div>
+            <h4>Grocery Items</h4>
+            </div>
+            <div class="addGroceryItemDiv">
+            <span>Enter Item:</span>
+            <input type="text">
+            <button type="button">Create</button>
+            </div>
         </div>
         `
     })

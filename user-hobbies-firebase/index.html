@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDsDKFbySVAEMlv4m_-Gp4nLW8CsBtdBmk",
+            authDomain: "grocery-app-firebase-a0f1d.firebaseapp.com",
+            databaseURL: "https://grocery-app-firebase-a0f1d.firebaseio.com",
+            projectId: "grocery-app-firebase-a0f1d",
+            storageBucket: "",
+            messagingSenderId: "158036915206",
+            appId: "1:158036915206:web:df934fb68f647c1a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // create an object of firebase database
+        let database = firebase.database()
+    </script>
+
+    <script src="js/app.js" async defer></script>
+</body>
+
+</html>
